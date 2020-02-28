@@ -6,9 +6,7 @@ export default class List extends React.Component {
     return (
       <div className="list">
         <h1>List</h1>
-        {this.props.posts.map(post => {
-          return <Item post={post} />;
-        })}
+        <Item />
       </div>
     );
   }
