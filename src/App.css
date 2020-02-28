@@ -1,0 +1,37 @@
+/* normilization */
+h1 {
+  font-size: 20px;
+  text-align: center;
+}
+body,
+h1,
+p {
+  margin: 2px;
+}
+/* App  */
+.app {
+  background-color: #ddd;
+  border: 10px green solid;
+  margin: 5px;
+}
+/* Create */
+.create {
+  border: 5px blue solid;
+  margin: 5px;
+}
+/* search */
+.search {
+  border: 5px blue solid;
+  margin: 5px;
+}
+/* list */
+.list {
+  border: 5px red solid;
+  margin: 5px;
+}
+/* item */
+.item {
+  background-color: #fff;
+  border: 3px black solid;
+  margin: 5px;
+}
