@@ -65,3 +65,13 @@ p {
   justify-content: space-between;
   align-items: flex-start;
 }
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+img {
+  width: 100px;
+}
