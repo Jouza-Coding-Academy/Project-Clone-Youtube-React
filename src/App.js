@@ -20,13 +20,15 @@ export default class App extends React.Component {
     };
   }
   componentDidMount = () => {
+    this.getVideos();
+  };
+
+  getVideos = (query = '') => {
     axios({
       method: 'GET',
-      url: `${URL}${ENDPOINT_SEARCH}?key=${API_KEY}&part=snippet`
+      url: `${URL}${ENDPOINT_SEARCH}?key=${API_KEY}&part=snippet&q=${query}`
     })
       .then(res => {
-        // console.log('RESPONSE: ', res);
-        // console.log('DATA: ', res.data);
         const { items } = res.data;
         this.setState({ videos: items, currentVideo: items[0] });
       })
@@ -39,15 +41,15 @@ export default class App extends React.Component {
     this.setState({ currentVideo: video });
   };
   render() {
-    const { state, changeCurrentVideo } = this;
+    const { state, changeCurrentVideo, getVideos } = this;
     const { videos, currentVideo } = state;
     return (
       <div className="app container">
         <h1 className="green">App</h1>
-        <Search />
+        <Search getVideos={getVideos} />
         <div className="flex ">
           {videos[0] && <Player currentVideo={currentVideo} />}
-          <List changeCurrentVideo={changeCurrentVideo} videos={videos} />
+          <List changeCurrentVideo={changeCurrentVideo} videos={videos.filter((v)=> v!==currentVideo)} />
         </div>
       </div>
     );

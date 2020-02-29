@@ -16,7 +16,7 @@ export default class Player extends React.Component {
           width="640"
           height="390"
           src={`${SHOW_VIDEO_URL}${videoId}`}
-          frameborder="0"
+          frameBorder="0"
         ></iframe>
         <h3>{title}</h3>
         <p>{description}</p>
