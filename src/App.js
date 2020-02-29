@@ -15,7 +15,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: []
+      videos: [],
+      currentVideo: {}
     };
   }
   componentDidMount = () => {
@@ -27,22 +28,26 @@ export default class App extends React.Component {
         // console.log('RESPONSE: ', res);
         // console.log('DATA: ', res.data);
         const { items } = res.data;
-        this.setState({ videos: items });
+        this.setState({ videos: items, currentVideo: items[0] });
       })
       .catch(err => {
         console.log('ERROR: ', err);
       });
   };
+
+  changeCurrentVideo = video => {
+    this.setState({ currentVideo: video });
+  };
   render() {
-    // console.log('ENV: ', process.env);
-    const { videos } = this.state;
+    const { state, changeCurrentVideo } = this;
+    const { videos, currentVideo } = state;
     return (
       <div className="app container">
         <h1 className="green">App</h1>
         <Search />
         <div className="flex ">
-          {videos[0] && <Player currentVideo={videos[0]} />}
-          <List videos={videos} />
+          {videos[0] && <Player currentVideo={currentVideo} />}
+          <List changeCurrentVideo={changeCurrentVideo} videos={videos} />
         </div>
       </div>
     );

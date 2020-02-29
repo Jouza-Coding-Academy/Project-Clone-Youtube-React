@@ -75,3 +75,7 @@ p {
 img {
   width: 100px;
 }
+
+.hover:hover{
+  cursor: pointer;
+}
