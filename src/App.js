@@ -24,10 +24,10 @@ export default class App extends React.Component {
       url: `${URL}${ENDPOINT_SEARCH}?key=${API_KEY}&part=snippet`
     })
       .then(res => {
-        console.log('RESPONSE: ', res);
-        console.log('DATA: ', res.data);
-        const {items}=res.data
-        this.setState({videos:items})
+        // console.log('RESPONSE: ', res);
+        // console.log('DATA: ', res.data);
+        const { items } = res.data;
+        this.setState({ videos: items });
       })
       .catch(err => {
         console.log('ERROR: ', err);
@@ -35,14 +35,14 @@ export default class App extends React.Component {
   };
   render() {
     // console.log('ENV: ', process.env);
-    const {videos}=this.state
+    const { videos } = this.state;
     return (
       <div className="app container">
         <h1 className="green">App</h1>
         <Search />
         <div className="flex ">
-          <Player currentVideo={videos[0]}/>
-          <List videos={videos}/>
+          {videos[0] && <Player currentVideo={videos[0]} />}
+          <List videos={videos} />
         </div>
       </div>
     );
