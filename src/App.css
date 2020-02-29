@@ -7,6 +7,7 @@ body,
 h1,
 p {
   margin: 2px;
+  box-sizing: border-box;
 }
 /* App  */
 .app {
@@ -17,21 +18,50 @@ p {
 /* Create */
 .create {
   border: 5px blue solid;
-  margin: 5px;
+  margin: 5px 0px;
 }
 /* search */
 .search {
   border: 5px blue solid;
-  margin: 5px;
+  margin: 5px 0px;
 }
+/* player */
+.player {
+  border: 5px purple solid;
+  margin: 5px 0px;
+  display: inline-block;
+}
+
 /* list */
 .list {
   border: 5px red solid;
-  margin: 5px;
+  margin: 5px 0px;
+  display: inline-block;
 }
 /* item */
 .item {
   background-color: #fff;
   border: 3px black solid;
-  margin: 5px;
+  margin: 5px 0px;
+}
+.green {
+  color: green;
+}
+.blue {
+  color: blue;
+}
+.purple {
+  color: purple;
+}
+.red {
+  color: red;
+}
+.black {
+  color: black;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }

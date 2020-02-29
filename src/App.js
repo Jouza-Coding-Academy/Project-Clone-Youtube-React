@@ -4,20 +4,29 @@ import './App.css';
 
 // import Create from './components/Create';
 import Search from './components/Search';
+import Player from './components/Player';
 import List from './components/List';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      videos:[]
+    };
   }
 
   render() {
     return (
-      <div className="app">
-        <h1>App</h1>
+      <div className="app container">
+        <h1 className="green">App</h1>
         <Search/>
+        <div className="flex ">
+        <Player/>
         <List/>
+        </div>
+      
+
+     
       </div>
     );
   }
