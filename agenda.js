@@ -1,6 +1,7 @@
-console.log('test');
-
 /* 
+Link for Videos + Code:
+https://drive.google.com/drive/folders/1s_yVwW3b7Iuuat9_ItUw65PlAXck-xer?usp=sharing
+
 Goals:
 1- ES 6 syntax (de structuring) + React Basics (state, props) [15 - 30 min]
 2- React Drilling + Using Axios in react [15 - 30 min]
@@ -27,10 +28,7 @@ React Drilling (change component from another component)
 Change the state of the app from child to change props of another child
 
 5) Search for videos
-
-
-
-
+get new videos depending on what we search for
 
 Resources:
 https://developers.google.com/youtube/v3
@@ -41,32 +39,3 @@ https://developers.google.com/youtube/iframe_api_reference
 https://getbootstrap.com/docs/4.4/components/input-group/
 https://reactjs.org/docs/conditional-rendering.html
 */
-
-// de structuring
-const person = {
-  a: 1,
-  b: 2,
-  c: 3,
-  d: {
-    name: 'jouza',
-    food: 'fried chicken'
-  }
-};
-console.log(person);
-console.log(person.d.name);
-// const {nameOfTHeKEy} = name of the object;
-const { d } = person;
-const { name, food } = d;
-
-console.log(d);
-console.log(name, food);
-
-//          WHERE EXIST      || HOW TO REACH IT        ||
-// state => same component   || nameOfTheClass.state   ||
-// props => parent component || nameOfTheClass.props   ||
-
-//          WHY WE USE IT
-// state => there is something will change in this component
-// props => pass data or functions
-
-// finish from the pops and state
